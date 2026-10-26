@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int size;
+    cout << "Enter the number of elements: ";
+    cin >> size;
+
+    // Dynamically allocate memory on heap
+    int* arr = new int[size];
+
+    cout << "Enter " << size << " elements:\n";
+    for (int i = 0; i < size; ++i) {
+        cin >> *(arr + i);
+    }
+
+    cout << "Elements in the dynamically allocated array: ";
+    for (int i = 0; i < size; ++i) {
+        cout << *(arr + i) << " ";
+    }
+    cout << endl;
+
+    // Free allocated memory
+    delete[] arr;
+    arr = nullptr;
+
+    return 0;
+}
